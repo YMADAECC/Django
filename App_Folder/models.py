@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 import uuid
- 
+
 class Person(models.Model):
     last_name = models.CharField(max_length=20)
     first_name = models.CharField(max_length=20)
@@ -9,7 +9,7 @@ class Person(models.Model):
     saved = models.DateTimeField(auto_now=True)
 
 ##日記テーブル
-class Diary(models.Model):
+class App_Folder(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     date = models.DateField(verbose_name='日付', default=timezone.now)
     title = models.CharField(verbose_name='タイトル', max_length=40)
