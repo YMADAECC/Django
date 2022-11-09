@@ -1,9 +1,7 @@
 #path関数をインポート
 from django.urls import path
-# 同ディレクトリからview.pyをインポート
-from . import views
+from .views import NippoCreateFormView
 
-#path関数(アクセスするアドレス、呼び出す処理)を追記
 urlpatterns = [
-    path('', views.index, name='index'),
+    path("create/", NippoCreateFormView.as_view(), name="nippo-create"),
 ]
