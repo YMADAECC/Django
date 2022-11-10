@@ -13,4 +13,7 @@ class NippoCreateFormView(CreateView):
     model = NippoModel
     form_class = NippoModelForm
     success_url = reverse_lazy("nippo-list")
+
+def Top(request):
+    return render(request, 'blogs/detail.html')
     

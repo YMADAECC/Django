@@ -1,17 +1,15 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>MyDiaryApp</title>
-</head>
-<body>
- 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">投稿</button>
-</form>
- 
-</body>
-</html>
+{% extends 'App_Folder_HTML/base.html' %}
+
+{% block content %}
+<div class="container my-3" style="max-width:700px;">
+    <div class="text-center my-3">
+        <h2>新しく日報を作成</h2>
+    </div>
+    
+    <form method="POST"> {% csrf_token %}
+        {{ form.as_p }}
+        <button onclick="location.href=''" class="btn btn-primary form-control" type="submit">登録</button>
+    </form>
+</div>
+{% endblock %}
